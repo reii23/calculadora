@@ -1,6 +1,6 @@
 body {
     min-height: 100vh;
-    background-image: linear-gradient(to bottom right, #2D3142, #035e79);
+    background-image: linear-gradient(to bottom right, #060606, #1388ab);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,11 +9,6 @@ body {
     color: white;
 }
 
-.container {
-    text-align: center;
-}
-
-/* elementos de .calculadora */
 .calculadora {
     background-color: rgba(0, 0, 0, 0.6);
     display: grid;
@@ -23,10 +18,8 @@ body {
     border-radius: 1rem;
     gap: 0.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    animation: scaleIn 0.5s ease-out;
 }
 
-/* elementos que aparecen en la pantalla de operaciones */
 .pantalla {
     grid-column: span 4;
     background-color: rgba(0, 0, 0, 0.8);
@@ -54,26 +47,21 @@ body {
     color: white;
 }
 
-.num {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.boton:hover {
-    background-color: rgba(0, 0, 0, 0.4);
-    transform: scale(1.1);
-}
-
 #zero {
     grid-column: span 2;
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* diseño del igual */
 #equal {
     grid-row: span 2;
     background-color: darkcyan;
     font-size: 1.4rem;
     transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.boton:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
 }
 
 #equal:hover {

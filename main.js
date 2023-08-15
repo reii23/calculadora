@@ -28,7 +28,7 @@ botones.forEach(boton => {
 
         if (botonPresionado === "=") {
             try {
-                pantalla.textContent = eval(pantalla.textContent);
+                pantalla.textContent = evaluarExpresion(pantalla.textContent);
             } catch {
                 pantalla.textContent = "Error!";
                 mostrarError = true;
@@ -44,6 +44,12 @@ botones.forEach(boton => {
     });
 });
 
+function evaluarExpresion(expresion) {
+    expresion = expresion.replace("÷", "/");
+    expresion = expresion.replace("×", "*");
+    return eval(expresion);
+}
+
 document.addEventListener("keydown", event => {
     const key = event.key;
     if (/[\d./*\-+]/.test(key)) {
@@ -52,10 +58,12 @@ document.addEventListener("keydown", event => {
             return;
         }
         if (key === "*") {
-            pantalla.textContent += key;
+            pantalla.textContent += "×";
+        } else if (key === "/") {
+            pantalla.textContent += "÷";
         } else if (key === "Enter") {
             try {
-                pantalla.textContent = eval(pantalla.textContent);
+                pantalla.textContent = evaluarExpresion(pantalla.textContent);
             } catch {
                 pantalla.textContent = "Error!";
                 mostrarError = true;
